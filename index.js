@@ -195,8 +195,6 @@ function cChoice(n) {
   return rChoice;
 }
 
-computer = cChoice(3)
-console.log(computer)
 function game(user, computer){
   let win = "you win!";
   let lose = "you lose!";
@@ -204,23 +202,33 @@ function game(user, computer){
   const rock = 0;
   const paper = 1;
   const scissors = 2;
-  if (computer === rock && user === rock) {
-    return tie;
-  } else if (computer === paper && user === paper) {
-    return tie;
-  } else if (computer === scissors && user === scissors) {
+  if (computer === user) {
     return tie;
   }
-  if (computer === rock && user === paper) {
-    return win;
-  } else if (computer === paper && user === rock) {
-    return lose;
-  } else if (computer === scissors && user === paper) {
-    return lose;
+  if (computer === rock) {
+    if (user === paper) {
+      return win;
+    } else if (user === scissors) {
+      return lose;
+    }
+  }
+  if (computer === scissors) {
+    if (user === rock) {
+      return win;
+    } else if (user === paper) {
+      return lose;
+    }
+  }
+  if (computer === paper) {
+    if (user === scissors) {
+      return win;
+    } else if (user === rock) {
+      return lose;
+    }
   }
 }
-
-console.log();
+console.log(game(1, cChoice(3)));//aaaaaaaa
+//I cant beleive this works LOL
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -268,16 +276,12 @@ Using the annoyingSong function below do the following:
 3. Outside of the function, Make a loop that invokes annoying song with a number that decreases until it gets to 1 bottle left. 
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
-for (let i = 20; i > 1; i--) {
-
-
 
 function annoyingSong(BoS){
-      BoSS = BoS - 1;
-      return BoS + " bottles of soda on the wall, " + BoS + " bottles of soda, take one down pass it around " + BoSS + " bottles of soda on the wall";
+      let BoSS = BoS - 1;
+      console.log( BoS + " bottles of soda on the wall, " + BoS + " bottles of soda, take one down pass it around " + BoSS + " bottles of soda on the wall");
 }
-}
-console.log(annoyingSong(10))
+annoyingSong(10);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -286,7 +290,7 @@ console.log(annoyingSong(10))
 Using the grade function below do the following: 
 1. Receive a score out of 100 
 2. Return the corresponding letter grade following this grade scale:
-
+// FOR ME you can use the funny method where a certain direction of the if statement. so like start with f first stupid
  90-100 should return 'you got an A' 
  80-89 should return 'you got a B'
  70-79 should return 'you got a C'
