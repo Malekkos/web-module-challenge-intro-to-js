@@ -227,9 +227,8 @@ function game(user, computer){
     }
   }
 }
-console.log(game(1, cChoice(3)));//aaaaaaaa
+console.log(game(2, cChoice(3)));//aaaa
 //I cant beleive this works LOL
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Metric Converter 
@@ -257,7 +256,7 @@ Using the feet function below do the following:
 */
 
 function feet(cm){
-  let cmConv = cm * 0.0328084;
+  let cmConv = cm / 30.48;
   return cmConv
 }
 
@@ -298,10 +297,21 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(gScore){
+if (gScore < 60) {
+  return "you got an F";
+} else if (gScore < 70) {
+  return "you got a D"
+} else if (gScore < 80) {
+  return "you got a C"
+} else if (gScore < 90) {
+  return "you got a B" 
+} else {
+  return "you got an A"
+}
 }
 
+console.log(grade(gScore))
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
