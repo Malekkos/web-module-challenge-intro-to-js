@@ -191,7 +191,7 @@ Use the game function below to do the following:
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
 function cChoice(n) {
-  let rChoice = Math.floor((Math.random() * 10) % n);
+  let rChoice = Math.floor((Math.random() * 10) % n);//
   return rChoice;
 }
 
@@ -233,11 +233,12 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  let mConv = km * 0.621371;
+  return mConv;
 }
 
-
+console.log(miles(10));
 
 //Task 5b - Centimeters to Feet
 /*
@@ -247,11 +248,12 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  let cmConv = cm * 0.0328084;
+  return cmConv
 }
 
-
+console.log(feet(160));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -266,11 +268,16 @@ Using the annoyingSong function below do the following:
 3. Outside of the function, Make a loop that invokes annoying song with a number that decreases until it gets to 1 bottle left. 
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
+for (let i = 20; i > 1; i--) {
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+
+
+function annoyingSong(BoS){
+      BoSS = BoS - 1;
+      return BoS + " bottles of soda on the wall, " + BoS + " bottles of soda, take one down pass it around " + BoSS + " bottles of soda on the wall";
 }
-
+}
+console.log(annoyingSong(10))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
