@@ -198,15 +198,25 @@ function cChoice(n) {
 computer = cChoice(3)
 console.log(computer)
 function game(user, computer){
-  let rock = 0;
-  let scissors = 1;
-  let paper = 2;
-  if (computer === rock && user === rock ) {
-    return "its a tie";
-  } else if (computer === rock && user === paper) {
-    return "you win!";
-  } else if (computer === rock && user === scissors) {
-    return "you lose!";
+  let win = "you win!";
+  let lose = "you lose!";
+  let tie = "it's a tie";
+  const rock = 0;
+  const paper = 1;
+  const scissors = 2;
+  if (computer === rock && user === rock) {
+    return tie;
+  } else if (computer === paper && user === paper) {
+    return tie;
+  } else if (computer === scissors && user === scissors) {
+    return tie;
+  }
+  if (computer === rock && user === paper) {
+    return win;
+  } else if (computer === paper && user === rock) {
+    return lose;
+  } else if (computer === scissors && user === paper) {
+    return lose;
   }
 }
 
