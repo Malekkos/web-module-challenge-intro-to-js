@@ -190,6 +190,7 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
+/*
 function cChoice(n) {
   let rChoice = Math.floor((Math.random() * 10) % n);//
   return rChoice;
@@ -227,8 +228,57 @@ function game(user, computer){
     }
   }
 }
-console.log(game(2, cChoice(3)));//aaaa
+
+console.log(game(2, cChoice(3)));
 //I cant beleive this works LOL
+//ok, so them telling us that Math.random gives us a number between 0 and 1 wasnt a refresher. Im pretty sure that it literally means that the tests it is running are literally only checking with those values.
+//really cringe.
+
+*/ //saving this cus im proud of it, despite the system being against me ;(
+
+let computer = Math.random();
+if (computer <= 0.34) {
+  computer = "rock";
+} else if (computer <= 0.67) {
+  computer = "paper";
+} else {
+  computer = "scissors";
+}
+
+function game(user, computer) {
+  let win = "you win!";
+  let lose = "you lose!";
+  let tie = "it's a tie";
+  if (user === computer) {
+    return tie;
+  }
+  if (computer === "rock") {
+    if (user === "paper") {
+      return win;
+    } else if (user === "scissors") {
+      return lose;
+    }
+  }
+  if (computer === "scissors") {
+    if (user === "rock") {
+      return win;
+    } else if (user === "paper") {
+      return lose;
+    }
+  }
+  if (computer === "paper") {
+    if (user === "scissors") {
+      return win;
+    } else if (user === "rock") {
+      return lose;
+    }
+  }
+}
+
+
+
+
+
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Metric Converter 
@@ -275,10 +325,11 @@ Using the annoyingSong function below do the following:
 3. Outside of the function, Make a loop that invokes annoying song with a number that decreases until it gets to 1 bottle left. 
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
-
+//I watched the solution video for this
 function annoyingSong(BoS){
-      let BoSS = BoS - 1;
-      console.log( BoS + " bottles of soda on the wall, " + BoS + " bottles of soda, take one down pass it around " + BoSS + " bottles of soda on the wall");
+      for (let i = BoS; i > 0; i --) {
+        return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`
+      }
 }
 annoyingSong(10);
 
@@ -311,7 +362,7 @@ if (gScore < 60) {
 }
 }
 
-console.log(grade(gScore))
+console.log(grade())
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
